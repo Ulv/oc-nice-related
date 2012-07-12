@@ -1,8 +1,7 @@
-Beautiful "featured" module for opencart (on vqmod)
-
------
-
 Красивый модуль "Рекомендуемые товары" для opencart 1.5.1.3 / vqmod
+------
+
+Beautiful "featured" module for opencart 1.5.1.3 (vqmod)
 
 !!! Сделан для темы default и opencart 1.5.1.3 !!!
 
