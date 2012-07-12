@@ -1,0 +1,565 @@
+
+.beautifulbutton {
+    position: relative;
+    overflow: visible;
+    display: inline-block;
+    padding: 0.5em 1em;
+    border: 1px solid #d4d4d4;
+    margin: 0;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 1px 1px 0 #fff;
+    font:11px/normal Helvetica;
+    color: #333;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    background-color: #ececec;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
+    background-image: -moz-linear-gradient(#f4f4f4, #ececec);
+    background-image: -ms-linear-gradient(#f4f4f4, #ececec);
+    background-image: -o-linear-gradient(#f4f4f4, #ececec);
+    background-image: linear-gradient(#f4f4f4, #ececec);
+    -moz-background-clip: padding; /* for Firefox 3.6 */
+    background-clip: padding-box;
+    border-radius: 4px;
+    /* IE hacks */
+    zoom: 1;
+    *display: inline;
+    border-color: #3072b3;
+    border-bottom-color: #2a65a0;
+    text-decoration: none;
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+    color: #fff;
+    background-color: #3c8dde;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#599bdc), to(#3072b3));
+    background-image: -moz-linear-gradient(#599bdc, #3072b3);
+    background-image: -o-linear-gradient(#599bdc, #3072b3);
+    background-image: linear-gradient(#599bdc, #3072b3);
+}
+
+.beautifulbutton:hover,
+.beautifulbutton:focus,
+.beautifulbutton:active,
+.beautifulbutton.active {
+    border-color: #3072b3;
+    border-bottom-color: #2a65a0;
+    text-decoration: none;
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+    color: #fff;
+    background-color: #3c8dde;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#599bdc), to(#3072b3));
+    background-image: -moz-linear-gradient(#599bdc, #3072b3);
+    background-image: -o-linear-gradient(#599bdc, #3072b3);
+    background-image: linear-gradient(#599bdc, #3072b3);
+}
+
+.beautifulbutton:active,
+.beautifulbutton.active {
+    border-color: #2a65a0;
+    border-bottom-color: #3884cd;
+    background-color: #3072b3;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3072b3), to(#599bdc));
+    background-image: -moz-linear-gradient(#3072b3, #599bdc);
+    background-image: -ms-linear-gradient(#3072b3, #599bdc);
+    background-image: -o-linear-gradient(#3072b3, #599bdc);
+    background-image: linear-gradient(#3072b3, #599bdc);
+}
+
+/* overrides extra padding on button elements in Firefox */
+.beautifulbutton::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+
+/* =============================================================================
+   Button icons
+   ========================================================================== */
+
+.beautifulbutton.icon:before {
+    content: "";
+    position: relative;
+    top: 1px;
+    float:left;
+    width: 12px;
+    height: 12px;
+    margin: 0 0.75em 0 -0.25em;
+    background: url(gh-icons.png) 0 99px no-repeat;
+}
+
+.beautifulbutton.arrowup.icon:before { background-position: 0 0; }
+.beautifulbutton.arrowup.icon:hover:before,
+.beautifulbutton.arrowup.icon:focus:before,
+.beautifulbutton.arrowup.icon:active:before { background-position: -12px 0; }
+
+.beautifulbutton.arrowdown.icon:before { background-position: 0 -12px; }
+.beautifulbutton.arrowdown.icon:hover:before,
+.beautifulbutton.arrowdown.icon:focus:before,
+.beautifulbutton.arrowdown.icon:active:before { background-position: -12px -12px; }
+
+.beautifulbutton.arrowleft.icon:before { background-position: 0 -24px; }
+.beautifulbutton.arrowleft.icon:hover:before,
+.beautifulbutton.arrowleft.icon:focus:before,
+.beautifulbutton.arrowleft.icon:active:before { background-position: -12px -24px; }
+
+.beautifulbutton.arrowright.icon:before { float:right; margin: 0 -0.25em 0 0.5em; background-position: 0 -36px; }
+.beautifulbutton.arrowright.icon:hover:before,
+.beautifulbutton.arrowright.icon:focus:before,
+.beautifulbutton.arrowright.icon:active:before { background-position: -12px -36px; }
+
+.beautifulbutton.approve.icon:before { background-position: 0 -48px; }
+.beautifulbutton.approve.icon:hover:before,
+.beautifulbutton.approve.icon:focus:before,
+.beautifulbutton.approve.icon:active:before { background-position: -12px -48px; }
+
+.beautifulbutton.add.icon:before { background-position: 0 -288px; }
+.beautifulbutton.add.icon:hover:before,
+.beautifulbutton.add.icon:focus:before,
+.beautifulbutton.add.icon:active:before { background-position: -12px -288px; }
+
+.beautifulbutton.remove.icon:before { background-position: 0 -60px; }
+.beautifulbutton.remove.icon:hover:before,
+.beautifulbutton.remove.icon:focus:before,
+.beautifulbutton.remove.icon:active:before { background-position: -12px -60px; }
+
+.beautifulbutton.log.icon:before { background-position: 0 -72px; }
+.beautifulbutton.log.icon:hover:before,
+.beautifulbutton.log.icon:focus:before,
+.beautifulbutton.log.icon:active:before { background-position: -12px -72px; }
+
+.beautifulbutton.calendar.icon:before { background-position: 0 -84px; }
+.beautifulbutton.calendar.icon:hover:before,
+.beautifulbutton.calendar.icon:focus:before,
+.beautifulbutton.calendar.icon:active:before { background-position: -12px -84px; }
+
+.beautifulbutton.chat.icon:before { background-position: 0 -96px; }
+.beautifulbutton.chat.icon:hover:before,
+.beautifulbutton.chat.icon:focus:before,
+.beautifulbutton.chat.icon:active:before { background-position: -12px -96px; }
+
+.beautifulbutton.clock.icon:before { background-position: 0 -108px; }
+.beautifulbutton.clock.icon:hover:before,
+.beautifulbutton.clock.icon:focus:before,
+.beautifulbutton.clock.icon:active:before { background-position: -12px -108px; }
+
+.beautifulbutton.settings.icon:before { background-position: 0 -120px; }
+.beautifulbutton.settings.icon:hover:before,
+.beautifulbutton.settings.icon:focus:before,
+.beautifulbutton.settings.icon:active:before { background-position: -12px -120px; }
+
+.beautifulbutton.comment.icon:before { background-position: 0 -132px; }
+.beautifulbutton.comment.icon:hover:before,
+.beautifulbutton.comment.icon:focus:before,
+.beautifulbutton.comment.icon:active:before { background-position: -12px -132px; }
+
+.beautifulbutton.fork.icon:before { background-position: 0 -144px; }
+.beautifulbutton.fork.icon:hover:before,
+.beautifulbutton.fork.icon:focus:before,
+.beautifulbutton.fork.icon:active:before { background-position: -12px -144px; }
+
+.beautifulbutton.like.icon:before { background-position: 0 -156px; }
+.beautifulbutton.like.icon:hover:before,
+.beautifulbutton.like.icon:focus:before,
+.beautifulbutton.like.icon:active:before { background-position: -12px -156px; }
+
+.beautifulbutton.favorite.icon:before { background-position: 0 -348px; }
+.beautifulbutton.favorite.icon:hover:before,
+.beautifulbutton.favorite.icon:focus:before,
+.beautifulbutton.favorite.icon:active:before { background-position: -12px -348px; }
+
+.beautifulbutton.home.icon:before { background-position: 0 -168px; }
+.beautifulbutton.home.icon:hover:before,
+.beautifulbutton.home.icon:focus:before,
+.beautifulbutton.home.icon:active:before { background-position: -12px -168px; }
+
+.beautifulbutton.key.icon:before { background-position: 0 -180px; }
+.beautifulbutton.key.icon:hover:before,
+.beautifulbutton.key.icon:focus:before,
+.beautifulbutton.key.icon:active:before { background-position: -12px -180px; }
+
+.beautifulbutton.lock.icon:before { background-position: 0 -192px; }
+.beautifulbutton.lock.icon:hover:before,
+.beautifulbutton.lock.icon:focus:before,
+.beautifulbutton.lock.icon:active:before { background-position: -12px -192px; }
+
+.beautifulbutton.unlock.icon:before { background-position: 0 -204px; }
+.beautifulbutton.unlock.icon:hover:before,
+.beautifulbutton.unlock.icon:focus:before,
+.beautifulbutton.unlock.icon:active:before { background-position: -12px -204px; }
+
+.beautifulbutton.loop.icon:before { background-position: 0 -216px; }
+.beautifulbutton.loop.icon:hover:before,
+.beautifulbutton.loop.icon:focus:before,
+.beautifulbutton.loop.icon:active:before { background-position: -12px -216px; }
+
+.beautifulbutton.search.icon:before { background-position: 0 -228px; }
+.beautifulbutton.search.icon:hover:before,
+.beautifulbutton.search.icon:focus:before,
+.beautifulbutton.search.icon:active:before { background-position: -12px -228px; }
+
+.beautifulbutton.mail.icon:before { background-position: 0 -240px; }
+.beautifulbutton.mail.icon:hover:before,
+.beautifulbutton.mail.icon:focus:before,
+.beautifulbutton.mail.icon:active:before { background-position: -12px -240px; }
+
+.beautifulbutton.move.icon:before { background-position: 0 -252px; }
+.beautifulbutton.move.icon:hover:before,
+.beautifulbutton.move.icon:focus:before,
+.beautifulbutton.move.icon:active:before { background-position: -12px -252px; }
+
+.beautifulbutton.edit.icon:before { background-position: 0 -264px; }
+.beautifulbutton.edit.icon:hover:before,
+.beautifulbutton.edit.icon:focus:before,
+.beautifulbutton.edit.icon:active:before { background-position: -12px -264px; }
+
+.beautifulbutton.pin.icon:before { background-position: 0 -276px; }
+.beautifulbutton.pin.icon:hover:before,
+.beautifulbutton.pin.icon:focus:before,
+.beautifulbutton.pin.icon:active:before { background-position: -12px -276px; }
+
+.beautifulbutton.reload.icon:before { background-position: 0 -300px; }
+.beautifulbutton.reload.icon:hover:before,
+.beautifulbutton.reload.icon:focus:before,
+.beautifulbutton.reload.icon:active:before { background-position: -12px -300px; }
+
+.beautifulbutton.rss.icon:before { background-position: 0 -312px; }
+.beautifulbutton.rss.icon:hover:before,
+.beautifulbutton.rss.icon:focus:before,
+.beautifulbutton.rss.icon:active:before { background-position: -12px -312px; }
+
+.beautifulbutton.tag.icon:before { background-position: 0 -324px; }
+.beautifulbutton.tag.icon:hover:before,
+.beautifulbutton.tag.icon:focus:before,
+.beautifulbutton.tag.icon:active:before { background-position: -12px -324px; }
+
+.beautifulbutton.trash.icon:before { background-position: 0 -336px; }
+.beautifulbutton.trash.icon:hover:before,
+.beautifulbutton.trash.icon:focus:before,
+.beautifulbutton.trash.icon:active:before { background-position: -12px -336px; }
+
+.beautifulbutton.user.icon:before { background-position: 0 -360px; }
+.beautifulbutton.user.icon:hover:before,
+.beautifulbutton.user.icon:focus:before,
+.beautifulbutton.user.icon:active:before { background-position: -12px -360px; }
+
+
+/* =============================================================================
+   Button extensions
+   ========================================================================== */
+
+/* Primary button
+   ========================================================================== */
+
+.beautifulbutton.primary {
+    font-weight: bold;
+}
+
+/* Danger button
+   ========================================================================== */
+
+.beautifulbutton.danger {
+    color: #900;
+    border-color: #b53f3a;
+    border-bottom-color: #a0302a;
+    color: #fff;
+    background-color: #dc5f59;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#dc5f59), to(#b33630));
+    background-image: -moz-linear-gradient(#dc5f59, #b33630);
+    background-image: -ms-linear-gradient(#dc5f59, #b33630);
+    background-image: -o-linear-gradient(#dc5f59, #b33630);
+    background-image: linear-gradient(#dc5f59, #b33630);
+}
+
+.beautifulbutton.danger:hover,
+.beautifulbutton.danger:focus,
+.beautifulbutton.danger:active {
+    border-color: #b53f3a;
+    border-bottom-color: #a0302a;
+    color: #fff;
+    background-color: #dc5f59;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#dc5f59), to(#b33630));
+    background-image: -moz-linear-gradient(#dc5f59, #b33630);
+    background-image: -ms-linear-gradient(#dc5f59, #b33630);
+    background-image: -o-linear-gradient(#dc5f59, #b33630);
+    background-image: linear-gradient(#dc5f59, #b33630);
+}
+
+.beautifulbutton.danger:active,
+.beautifulbutton.danger.active {
+    border-color: #a0302a;
+    border-bottom-color: #bf4843;
+    background-color: #b33630;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#b33630), to(#dc5f59));
+    background-image: -moz-linear-gradient(#b33630, #dc5f59);
+    background-image: -ms-linear-gradient(#b33630, #dc5f59);
+    background-image: -o-linear-gradient(#b33630, #dc5f59);
+    background-image: linear-gradient(#b33630, #dc5f59);
+}
+
+/* Pill button
+   ========================================================================== */
+
+.beautifulbutton.pill {
+    border-radius: 50em;
+}
+
+/* Disabled button
+   ========================================================================== */
+
+.beautifulbutton.disable {
+    opacity: 0.5;
+}
+
+/* Big button
+   ========================================================================== */
+
+.beautifulbutton.big {
+    font-size: 14px;
+}
+
+.beautifulbutton.big.icon:before {
+    top: 0;
+}
+
+
+/* =============================================================================
+   Button groups
+   ========================================================================== */
+
+/* Standard group
+   ========================================================================== */
+
+.beautifulbutton-group {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* IE hacks */
+    zoom: 1;
+    *display: inline;
+}
+
+.beautifulbutton + .beautifulbutton,
+.beautifulbutton + .beautifulbutton-group,
+.beautifulbutton-group + .beautifulbutton,
+.beautifulbutton-group + .beautifulbutton-group {
+    margin-left: 15px;
+}
+
+.beautifulbutton-group li {
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+.beautifulbutton-group .beautifulbutton {
+    float: left;
+    margin-left: -1px;
+}
+
+/*
+.beautifulbutton-group > .beautifulbutton:not(:first-child):not(:last-child),
+.beautifulbutton-group li:not(:first-child):not(:last-child) .beautifulbutton {
+    border-radius: 0;
+}
+*/
+
+.beautifulbutton-group > .beautifulbutton:first-child,
+.beautifulbutton-group li:first-child .beautifulbutton {
+    margin-left: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.beautifulbutton-group > .beautifulbutton:last-child,
+.beautifulbutton-group li:last-child > .beautifulbutton {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Minor group
+   ========================================================================== */
+
+.beautifulbutton-group.minor-group .beautifulbutton {
+    border: 1px solid #d4d4d4;
+    text-shadow: none;
+    background-image: none;
+    background-color: #fff;
+}
+
+.beautifulbutton-group.minor-group .beautifulbutton:hover,
+.beautifulbutton-group.minor-group .beautifulbutton:focus {
+    background-color: #599bdc;
+}
+
+.beautifulbutton-group.minor-group .beautifulbutton:active,
+.beautifulbutton-group.minor-group .beautifulbutton.active {
+    background-color: #3072b3;
+}
+
+.beautifulbutton-group.minor-group .beautifulbutton.icon:before {
+    opacity: 0.8;
+}
+
+/* =============================================================================
+   Button container (mixing buttons and groups, e.g., nav bar)
+   ========================================================================== */
+
+.beautifulbutton-container .beautifulbutton,
+.beautifulbutton-container .beautifulbutton-group {
+    vertical-align: top;
+}
+
+
+.product-column {
+    position: relative;
+    float: left;
+    margin: 0px 5px 0px 5px;
+    width: 144px;
+    height: auto;
+}
+
+.product {
+    padding: 6px;
+    margin-bottom: 12px;
+    width: 130px;
+    height: 172px;
+    overflow: hidden;
+    /* Border bottom light */
+    border: 1px solid rgba(158, 158, 158, 0.6);
+ 
+    -webkit-box-shadow: 0px  0px 3px rgba(0, 0, 0, 0.3);
+       -moz-box-shadow: 0px  0px 3px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px  0px 3px rgba(0, 0, 0, 0.3);
+ 
+    /* Round corners */
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+    
+    /* Animation */
+    -webkit-transition-property: box-shadow, -webkit-box-shadow, -moz-box-shadow, height, background-color;
+       -moz-transition-property: box-shadow, -webkit-box-shadow, -moz-box-shadow, height, background-color;
+         -o-transition-property: box-shadow, -webkit-box-shadow, -moz-box-shadow, height, background-color; 
+    -webkit-transition-duration: .25s;
+       -moz-transition-duration: .25s;
+         -o-transition-duration: .25s;
+    -webkit-transition-delay: 0s;
+       -moz-transition-delay: 0s;
+         -o-transition-delay: 0s;
+}
+
+.product:hover {
+    /*
+    height: 228px;
+    */
+    /* height: 288px; */
+    height: 308px;
+    /* Inner top shadow */
+    -webkit-box-shadow:
+        inset  0px  3px 5px rgba(0, 0, 0, 0.1), /* top */
+        inset  3px  0px 5px rgba(0, 0, 0, 0.1), /* right */
+        inset  0px -3px 5px rgba(0, 0, 0, 0.1), /* bottom */
+        inset -3px  0px 5px rgba(0, 0, 0, 0.1); /* left */
+       -moz-box-shadow:
+        inset  0px  3px 5px rgba(0, 0, 0, 0.1), /* top */
+        inset  3px  0px 5px rgba(0, 0, 0, 0.1), /* right */
+        inset  0px -3px 5px rgba(0, 0, 0, 0.1), /* bottom */
+        inset -3px  0px 5px rgba(0, 0, 0, 0.1); /* left */
+            box-shadow:
+        inset  0px  3px 5px rgba(0, 0, 0, 0.1), /* top */
+        inset  3px  0px 5px rgba(0, 0, 0, 0.1), /* right */
+        inset  0px -3px 5px rgba(0, 0, 0, 0.1), /* bottom */
+        inset -3px  0px 5px rgba(0, 0, 0, 0.1); /* left */
+       
+    background-color: #ececec;
+}
+
+.product h1 {
+    color: #333;
+    font-size: 18px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.product h2 {
+    color: #3072b3;
+    font-size: 16px;
+    text-align: center;
+}
+
+.product p {
+    display: none;
+    font-size: 12px;
+    padding: 2px 5px;
+    font-family: sans;
+    line-height: 14px;
+    height: 54px;
+    display: block;
+}
+
+.product:hover p {
+    display: block;
+}
+
+.product a {
+    float: left;
+}
+
+.beautifulbutton + .beautifulbutton {
+    margin-left: 0px;
+}
+
+.product .beautifulbutton {
+    opacity: 0;
+    
+    width: 108px;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+    /* Animation */
+    -webkit-transition-property: opacity;
+       -moz-transition-property: opacity; 
+    -webkit-transition-duration: .25s;
+       -moz-transition-duration: .25s;
+    -webkit-transition-delay: .1s;
+       -moz-transition-delay: .1s;
+      
+}
+
+.product:hover .beautifulbutton {
+    opacity: 1;
+}
+
+.product img {
+    width: 130px;
+    height: 130px;
+}
+
+.product img.small {
+    width: 108px;
+    height: 108px;
+    padding: 0 12px;
+}
+
+.clearfix:after {
+ content: ".";
+ display: block;
+ clear: both;
+ visibility: hidden;
+ line-height: 0;
+ height: 0;
+}
+ 
+.clearfix {
+ display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+ display: block;
+}
+ 
+* html .clearfix {
+ height: 1%;
+}

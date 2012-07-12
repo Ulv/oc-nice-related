@@ -1,0 +1,73 @@
+<modification>
+	<id><![CDATA[oc-related-mod]]></id>
+	<version><![CDATA[0.1]]></version>
+	<vqmver><![CDATA[2]]></vqmver>
+	<author><![CDATA[ulv8888@gmail.com]]></author>
+
+<!-- в контроллер добавляем вывод атрибутов -->
+	<file name="catalog/controller/module/featured.php">
+		<operation>
+			<search position="after"><![CDATA[$product_info = $this->model_catalog_product->getProduct($product_id);]]></search>
+			<add><![CDATA[$product_attributes = $this->model_catalog_product->getProductAttributes($product_id);]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA['href'    	 => $this->url->link('product/product', 'product_id=' . $product_info['product_id']),]]></search>
+			<add><![CDATA['product_attributes' => $product_attributes,]]></add>
+		</operation>
+	</file>
+
+<!-- подключаем css -->
+	<file name="catalog/view/theme/default/template/common/header.tpl">
+		<operation>
+			<search position="before"><![CDATA[</head>]]></search>
+			<add><![CDATA[<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/related.css" />]]></add>
+		</operation>
+
+	</file>
+
+<!-- изменения в view -->
+	<file name="catalog/view/theme/default/template/module/featured.tpl">
+		<operation>
+			<search position="replace" offset="31"><![CDATA[<div class="box">]]></search>
+			<add><![CDATA[
+<div class="product-column">
+<?php $i=1; ?>
+<?php foreach ($products as $product): ?>
+<?php if ($i%5==0): ?>
+</div>
+<div class="product-column">
+<?php endif; ?>
+	<div class="product">
+    	<h1><?php echo $product['name']; ?></h1>
+        <?php if ($product['thumb']): ?>
+        <a href="<?php echo $product['href']; ?>">
+        	<img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" />
+        </a>
+        <?php endif;?>
+        <h2> <?php if (!$product['special']) { ?>
+        <?php echo $product['price']; ?>
+        <?php } else { ?>
+        <span class="price-old"><?php echo $product['price']; ?></span> <span class="price-new"><?php echo $product['special']; ?></span>
+        <?php } ?></h2>
+        
+<p>
+<?php 
+foreach ($product['product_attributes'] as $k=>$v) {
+	foreach ($v['attribute'] as $k1=>$v1) {
+		echo '- '.$v1['name'].' '.$v1['text'].'<br />'.PHP_EOL;
+	}
+}
+?>
+</p>
+
+        <a onclick="addToCart('<?php echo $product['product_id']; ?>');" class="beautifulbutton"><?php echo $button_cart; ?></a>
+    </div>
+    <?php $i++; ?>
+    <?php endforeach; ?>
+</div>
+<div class="clearfix"></div>]]></add>
+		</operation>
+		
+	</file>
+	
+</modification>
